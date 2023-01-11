@@ -13,15 +13,36 @@ class Program
             Console.Write("Enter number: ");
             string input = Console.ReadLine();
             numAdded = int.Parse(input);
-
-            numbers.Add(numAdded);
+            
+            if (numAdded != 0)
+            {
+                numbers.Add(numAdded);
+            }
         } 
 
-        //Test to print list
+        //Iterating and adding each value
+        float sum = 0;
+        float avg = 0;
+        int numlarge = 0;
+        int smallest = 1000;
         foreach (int number in numbers)
         {
-            Console.WriteLine(number);
+            sum = number + sum;
+            avg = avg +1;
+            //The largest number
+            if (number > numlarge)
+            {
+                numlarge = number;
+            }
+            //The smallest positive number
+            if (number < smallest && number >0)
+            {
+                smallest = number;
+            }
         }     
-        
+        Console.WriteLine($"The sum is: {sum}");
+        Console.WriteLine($"The average is: {sum/numbers.Count}");
+        Console.WriteLine($"The largest number is: {numlarge}");
+        Console.WriteLine($"The smallest positive number is: {smallest}");
     }
 }
