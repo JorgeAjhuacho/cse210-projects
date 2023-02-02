@@ -45,6 +45,16 @@ public class BaseActivity
         _activityName = ActName;
     }
 
+    public int GetActDuration()
+    {
+        return _activityDuration;
+    }
+
+    public void SetActDuration(int actDuration)
+    {
+        _activityDuration = actDuration;
+    }
+
     public string GetActDescription()
     {
         return _activityDescription;
@@ -64,5 +74,28 @@ public class BaseActivity
         _finalMessage = FinalMessage;
     }
 
-    
+    public string PrintActivityName()
+    {
+        return $"Welcome to the {_activityName}.";
+    }
+
+    public string PrintActivtyDescription()
+    {
+        return $"{_activityDescription}";
+    }
+
+    public string PrintActivityDuration()
+    {
+        Console.Write("How long in seconds, would you like for your session? ");
+        string time = Console.ReadLine();
+        return time;
+    }
+
+    public string PrintFinalMessage()
+    {
+        Console.WriteLine("Well Done.");
+        Console.WriteLine();
+        Convert.ToString(_activityDuration);
+        return $"You have completed {_activityDuration} seconds of the {_activityName}.";
+    }
 }
