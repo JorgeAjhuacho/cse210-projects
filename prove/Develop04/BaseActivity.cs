@@ -98,4 +98,5 @@ public class BaseActivity
         Convert.ToString(_activityDuration);
         return $"You have completed {_activityDuration} seconds of the {_activityName}.";
     }
+    
 }
